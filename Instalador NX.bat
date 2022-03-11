@@ -1,13 +1,13 @@
 @echo off
 title Instalacion desatendida Siemens NX Series
 
-REM color fondo codigo letra
+REM Color fondo codigo letra
 color 0A
 
-:: Tamaño columnas y lineas
+REM Tamaño columnas y lineas
 mode con cols=100 lines=30
 
-:: Descompresion del Zip-y
+REM Descompresion del Zip-y
 echo ################################
 echo ## Descomprimiendo Siemens NX ##
 echo ################################

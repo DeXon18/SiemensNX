@@ -15,7 +15,10 @@ REM Añadir -y para forzar sobreescribir.
 echo ################################
 echo ## Descomprimiendo Siemens NX ##
 echo ################################
-FOR /F "delims==" %%I IN ('dir /b /s "SiemensNX-*_wntx64.zip"') DO ( "7z.exe" x -o"%%~dpnI" "%%I" cd %%~dpnI )
+FOR /F "delims==" %%I IN ('dir /b /s "SiemensNX-*_wntx64.zip"') DO (
+	"7z.exe" x -o"%%~dpnI" "%%I"
+	cd %%~dpnI
+)
 
 cls
 REM Instalacion Siemens NX
@@ -88,13 +91,10 @@ if errorlevel 1 (
 	FOR /F "delims==" %%I IN ('dir /b /s NDP472-KB4054530-x86-x64-AllOS-ENU.exe') DO (=
 		START /WAIT %%I /Silent
 	)
-) else (
-    echo .NET Framework 4.5.2 is installed
-	pause
 )
 
-
-
+cls
+echo Instalacion completada
 
 pause
 

@@ -39,7 +39,8 @@ REM Comando INSTALLDIR
 REM Comando ADDLOCAL
 	REM Si está realizando una instalación completa, debe especificar ADDLOCAL=ALL.
 	REM Si no se especifica ADDLOCAL en el comando, es lo mismo que ADDLOCAL=FEAT_NXPLATFORM solamente.
-	REM El resto de características de instalación seleccionables para una instalación personalizada son
+	REM El resto de características de instalación seleccionables para una instalación personalizada son:
+
 	REM FEAT_AUTOMATION_DESIGNER      FEAT_AUTOMOTIVE
 	REM FEAT_DIAGRAMMING              FEAT_DRAFTING
 	REM FEAT_MANUFACTURING_PLANNING   FEAT_MANUFACTURING

@@ -5,8 +5,8 @@ color 0A
 REM Tamaño columnas y lineas
 mode con cols=100 lines=30
 
-REM Verificamos si exisite la variable de entorno SPLM_LICENSE_Server
-REM Si es asi utilizamos el valor para la instalación de Siemens NX
+REM Verifica si exisite la variable de entorno SPLM_LICENSE_Server
+REM Si es asi utiliza el valor para la instalación de Siemens NX
 set ENV_PATH=%SPLM_LICENSE_Server%
 if "%ENV_PATH%"== "" ( set DefaultServer 28000@localhost ) else ( set DefaultServer %ENV_PATH% )
 

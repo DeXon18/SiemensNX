@@ -1,11 +1,14 @@
 @echo off
 title Instalacion desatendida Siemens NX Series
-
 REM Color fondo codigo letra
 color 0A
-
 REM Tamaño columnas y lineas
 mode con cols=100 lines=30
+
+REM Verificamos si exisite la variable de entorno SPLM_LICENSE_Server
+REM Si es asi utilizamos el valor para la instalación de Siemens NX
+set ENV_PATH=%SPLM_LICENSE_Server%
+if "%ENV_PATH%"== "" ( set DefaultServer 28000@localhost ) else ( set DefaultServer %ENV_PATH% )
 
 REM Descompresion del Zip-y
 echo ################################
@@ -59,7 +62,7 @@ echo ###########################################
 echo ##  Instalacion desatencida Siemens NX   ##
 echo ###########################################
 FOR /F "delims==" %%I IN ('dir /b /s SiemensNX.msi') DO (=
-	msiexec.exe /i %%I ALLUSERS=1 /passive /log output.log LICENSESERVER=28000@<localhost> LANGUAGE=spanish ADDLOCAL=ALL
+	msiexec.exe /i %%I ALLUSERS=1 /passive /log output.log LICENSESERVER=28000@%DefaultServer% LANGUAGE=spanish ADDLOCAL=ALL
 )
 
 REM  Instalacion Microsoft Visual C++ Redistributable

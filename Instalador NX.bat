@@ -10,15 +10,12 @@ REM Si es asi utilizamos el valor para la instalación de Siemens NX
 set ENV_PATH=%SPLM_LICENSE_Server%
 if "%ENV_PATH%"== "" ( set DefaultServer 28000@localhost ) else ( set DefaultServer %ENV_PATH% )
 
-REM Descompresion del Zip-y
+REM Descompresion del Zip
+REM Añadir -y para forzar sobreescribir.
 echo ################################
 echo ## Descomprimiendo Siemens NX ##
 echo ################################
-
-FOR /F "delims==" %%I IN ('dir /b /s "SiemensNX-*_wntx64.zip"') DO (
-	"7z.exe" x -o"%%~dpnI" "%%I"
-	cd %%~dpnI
-)
+FOR /F "delims==" %%I IN ('dir /b /s "SiemensNX-*_wntx64.zip"') DO ( "7z.exe" x -o"%%~dpnI" "%%I" cd %%~dpnI )
 
 cls
 REM Instalacion Siemens NX

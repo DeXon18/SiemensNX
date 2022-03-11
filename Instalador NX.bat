@@ -8,7 +8,7 @@ mode con cols=100 lines=30
 REM Verifica si exisite la variable de entorno SPLM_LICENSE_Server
 REM Si es asi utiliza el valor para la instalación de Siemens NX
 set ENV_PATH=%SPLM_LICENSE_Server%
-if "%ENV_PATH%"== "" ( set DefaultServer 28000@localhost ) else ( set DefaultServer %ENV_PATH% )
+if "%ENV_PATH%"== "" ( set DefaultServer=28000@localhost ) else ( set DefaultServer=%ENV_PATH% )
 
 REM Descompresion del Zip
 REM Añadir -y para forzar sobreescribir.
@@ -59,12 +59,12 @@ REM TARGETDIR
 	REM Esta propiedad es sólo para instalaciones administrativas. Consulte Instalación de NX para Parallel Product Testing para más información.
 
 echo ###########################################
-echo ##  Instalacion desatencida Siemens NX   ##
+echo ##  Instalacion desatendida Siemens NX   ##
 echo ###########################################
 FOR /F "delims==" %%I IN ('dir /b /s SiemensNX.msi') DO (=
 	msiexec.exe /i %%I ALLUSERS=1 /passive /log output.log LICENSESERVER=28000@%DefaultServer% LANGUAGE=spanish ADDLOCAL=ALL
 )
-
+cls
 REM  Instalacion Microsoft Visual C++ Redistributable
 echo ##################################################################
 echo ## Instalacion desatencida Microsoft Visual C++ Redistributable ##
@@ -72,7 +72,7 @@ echo ##################################################################
 FOR /F "delims==" %%I IN ('dir /b /s VC_redist.x64.exe') DO (=
 	START /WAIT %%I /Silent
 )
-
+cls
 REM  Instalacion .NET 5.0.3
 echo ########################################
 echo ## Instalacion desatencida .NET 5.0.3 ##
@@ -80,7 +80,7 @@ echo ########################################
 FOR /F "delims==" %%I IN ('dir /b /s dotnet-runtime-5.0.3-win-x64.exe') DO (=
 	START /WAIT %%I /Silent
 )
-
+cls
 REM  Instalacion .NET Framework 4.7.2
 REM  En versiones de Windows 10 y 11 no es necesario ya que es nativo
 reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319\SKUs\.NETFramework,Version=v4.7.2" 2>nul

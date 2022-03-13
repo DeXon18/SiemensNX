@@ -86,7 +86,7 @@ REM  En versiones de Windows 10 y 11 no es necesario ya que es nativo
 reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319\SKUs\.NETFramework,Version=v4.7.2" 2>nul
 if errorlevel 1 (
     echo ##################################################
-	echo ## Instalacion desatencida .NET Framework 4.7.2 ##
+    echo ## Instalacion desatencida .NET Framework 4.7.2 ##
     echo ##################################################
 	FOR /F "delims==" %%I IN ('dir /b /s NDP472-KB4054530-x86-x64-AllOS-ENU.exe') DO (=
 		START /WAIT %%I /Silent

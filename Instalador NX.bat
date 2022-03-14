@@ -67,7 +67,7 @@ FOR /F "delims==" %%I IN ('dir /b /s SiemensNX.msi') DO (=
 cls
 REM  Instalacion Microsoft Visual C++ Redistributable
 echo ##################################################################
-echo ## Instalacion desatencida Microsoft Visual C++ Redistributable ##
+echo ## Instalacion desatendida Microsoft Visual C++ Redistributable ##
 echo ##################################################################
 FOR /F "delims==" %%I IN ('dir /b /s VC_redist.x64.exe') DO (=
 	START /WAIT %%I /Silent
@@ -75,7 +75,7 @@ FOR /F "delims==" %%I IN ('dir /b /s VC_redist.x64.exe') DO (=
 cls
 REM  Instalacion .NET 5.0.3
 echo ########################################
-echo ## Instalacion desatencida .NET 5.0.3 ##
+echo ## Instalacion desatendida .NET 5.0.3 ##
 echo ########################################
 FOR /F "delims==" %%I IN ('dir /b /s dotnet-runtime-5.0.3-win-x64.exe') DO (=
 	START /WAIT %%I /Silent
@@ -86,7 +86,7 @@ REM  En versiones de Windows 10 y 11 no es necesario ya que es nativo
 reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework\v4.0.30319\SKUs\.NETFramework,Version=v4.7.2" 2>nul
 if errorlevel 1 (
     echo ##################################################
-    echo ## Instalacion desatencida .NET Framework 4.7.2 ##
+    echo ## Instalacion desatendida .NET Framework 4.7.2 ##
     echo ##################################################
 	FOR /F "delims==" %%I IN ('dir /b /s NDP472-KB4054530-x86-x64-AllOS-ENU.exe') DO (=
 		START /WAIT %%I /Silent

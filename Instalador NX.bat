@@ -62,7 +62,7 @@ echo ###########################################
 echo ##  Instalacion desatendida Siemens NX   ##
 echo ###########################################
 FOR /F "delims==" %%I IN ('dir /b /s SiemensNX.msi') DO (=
-	msiexec.exe /i %%I ALLUSERS=1 /passive /log output.log LICENSESERVER=@%DefaultServer% LANGUAGE=spanish ADDLOCAL=ALL
+	msiexec.exe /i %%I ALLUSERS=1 /passive /log output.log LICENSESERVER=%DefaultServer% LANGUAGE=spanish ADDLOCAL=ALL
 )
 cls
 REM  Instalacion Microsoft Visual C++ Redistributable
